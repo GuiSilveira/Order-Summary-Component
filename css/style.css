@@ -136,9 +136,12 @@ h1 {
 }
 
 .attribution {
+    margin: 0 auto;
     margin-top: 1rem;
     opacity: 80%;
     font-weight: 500;
+    font-size: .7rem;
+    width: 80%;
 }
 
 .attribution a {
@@ -146,10 +149,6 @@ h1 {
     color: var(--bright-blue);
     font-weight: 700;
     text-decoration: none;
-}
-
-.attribution a:hover {
-    font-size: 1.05rem;
 }
 
 @media (min-width: 768px) {
@@ -183,5 +182,13 @@ h1 {
 
     .cancel_button {
         margin: 2rem 0 0 0;
+    }
+
+    .attribution {
+        font-size: 1rem;
+    }
+
+    .attribution a:hover {
+        text-decoration: underline;
     }
 }
