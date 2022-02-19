@@ -25,8 +25,13 @@ html {
     box-sizing: inherit;
 }
 
+*:hover {
+    transition: all 0.3s ease-in-out;
+}
+
 body {
     background: var(--pale-blue) url('./images/pattern-background-mobile.svg') center/cover no-repeat;
+    text-align: center;
 }
 
 .container {
@@ -102,7 +107,6 @@ h1 {
 
 .annual_container > a:hover {
     opacity: 80%;
-    transition: all 0.3s ease-in-out;
 }
 
 .main_button {
@@ -118,7 +122,6 @@ h1 {
 
 .main_button:hover {
     opacity: 80%;
-    transition: all 0.3s ease-in-out;
 }
 
 .cancel_button {
@@ -130,7 +133,23 @@ h1 {
 
 .cancel_button:hover {
     color: var(--dark-blue);
-    transition: all 0.3s ease-in-out;
+}
+
+.attribution {
+    margin-top: 1rem;
+    opacity: 80%;
+    font-weight: 500;
+}
+
+.attribution a {
+    opacity: 100%;
+    color: var(--bright-blue);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.attribution a:hover {
+    font-size: 1.05rem;
 }
 
 @media (min-width: 768px) {
