@@ -13,20 +13,28 @@
     font-family: 'Red Hat Display', sans-serif;
 }
 
+html {
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
 body {
-    background: var(--pale-blue);
+    background: var(--pale-blue) url('./images/pattern-background-mobile.svg') center/cover no-repeat;
 }
 
 .container {
-    width: 80vw;
-    height: 80vh;
-    max-width: 375px;
-    max-height: 667px;
     background-color: white;
-    margin: 0 auto;
-    margin-top: 12vh;
     border-radius: 20px;
+    margin: 0 2rem 0 2rem;
     overflow: hidden;
+    box-shadow: 0px 10px 50px hsl(245, 75%, 52%, .3);
 }
 
 header img {
@@ -34,107 +42,127 @@ header img {
 }
 
 .conteudo_principal {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    justify-content: space-evenly;
-    height: 68%;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 h1 {
+    color: var(--dark-blue);
     font-weight: 900;
     font-size: 1.5rem;
-    margin: 1rem auto;
-    color: var(--dark-blue);
-}
-
-p {
-    color: var(--desaturated-blue);
+    margin: 1rem 0 1rem 0;
 }
 
 .main_paragraph {
-    margin: 0 1.1rem;
-    /* padding: 0 1rem; */
+    color: var(--desaturated-blue);
     line-height: 1.5rem;
-    font-weight: 500;
+    padding: 0 1.5rem;   
 }
 
 .annual_container {
-    background-color: var(--very-pale-blue);
-    margin: 1rem 1.2rem;
-    padding: 1rem 0;
     display: flex;
-    justify-content: space-evenly;
-    border-radius: 10px;
+    justify-content: space-between;
     align-items: center;
+    padding: 1rem 1rem;
+    background-color: var(--very-pale-blue);
+    border-radius: 10px;
+    margin: 1rem 1rem;
+}
+
+.text_container {
+    display: flex;
+    align-items: center;
+}
+
+.text_container > img {
+    margin-right: 1rem;
 }
 
 .annual_text {
-   font-size: .9rem;
-   height: 100%;
-   margin-left: .5rem;
+    line-height: 1.3rem;
 }
 
-.annual_text strong {
-    color: var(--dark-blue);
-    font-weight: 900;
-}
-
-.annual_text p {
-    margin-top: .4rem;
-}
-
-.annual_container a {
-    margin-left: 1.3rem;
-    font-size: .8rem;
+.annual_text > strong {
     font-weight: 700;
+    color: var(--dark-blue);
 }
 
-.annual_container a:hover {
-    filter: opacity(80%);
-    text-decoration: none;
+.annual_text > p {
+    color: var(--desaturated-blue);
+}
+
+.annual_container > a {
+    color: var(--bright-blue);
+    font-weight: 700;
+    font-size: .9rem;
+}
+
+.annual_container > a:hover {
+    opacity: 80%;
+    transition: all 0.3s ease-in-out;
 }
 
 .main_button {
-    background: var(--bright-blue);
-    border-radius: 10px;
-    color: var(--very-pale-blue);
+    background-color: var(--bright-blue);
+    color: white;
     text-decoration: none;
     font-weight: 700;
-    height: 3rem;
-    margin: 0 1.2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0 1rem;
+    border-radius: 10px;
+    padding: 1rem 1rem;
+    box-shadow: 0px 8px 10px hsl(245, 75%, 52%, .3);
 }
 
 .main_button:hover {
-    filter: opacity(80%);
+    opacity: 80%;
+    transition: all 0.3s ease-in-out;
 }
 
-.cancel {
-    text-decoration: none;
-    font-weight: 900;
+.cancel_button {
     color: var(--desaturated-blue);
-    font-size: 0.9rem;
-    margin-top: 1rem;
+    text-decoration: none;
+    font-weight: 700;
+    margin: 1.5rem 0;
 }
 
-.cancel:hover {
+.cancel_button:hover {
     color: var(--dark-blue);
+    transition: all 0.3s ease-in-out;
 }
 
-@media screen and (min-width: 1024px) {
+@media (min-width: 768px) {
+    body {
+        background: var(--pale-blue) url('./images/pattern-background-desktop.svg') center/cover no-repeat;
+        background-position-y: -400px;
+    }
+
+    .conteudo_principal {
+        padding: 3rem;
+    }
 
     h1 {
-       margin: 0 auto;
+        font-size: 2rem;
+        margin: 0 0 2rem 0;
+    }
+
+    .main_paragraph {
+        font-size: 1.1rem;
     }
 
     .annual_container {
-        margin: 0 1.2rem;
+        margin: 2rem 1rem;
+        padding: 1.5rem 1.5rem;
+    }
+    
+    .main_button {
+        padding: 1.3rem 1.3rem;
+        box-shadow: 0px 10px 30px hsl(245, 75%, 52%, .3);
     }
 
-    .cancel {
-        margin: 0;
+    .cancel_button {
+        margin: 2rem 0 0 0;
     }
 }
